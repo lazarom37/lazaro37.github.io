@@ -1,2 +1,2 @@
-# lazaroRatGame
-A small Canvas-based game for my PROG209 class at Bellevue College. Play as man's worst nightmare, collect cheese, and get home safe before the timer runs out!
+# A view for all my projects
+This site was made to show off all the projects I've worked on, in and out of school
