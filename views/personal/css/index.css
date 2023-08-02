@@ -1,31 +1,47 @@
 @font-face {
-  font-family: 'adultSwim';
-  src:
-    url('../fonts/adultSwim.ttf');
+  font-family: "adultSwim";
+  src: url("../fonts/adultSwim.ttf");
 }
 
 @font-face {
-  font-family: 'impact';
-  src:
-    url('../fonts/impact.ttf');
+  font-family: "impact";
+  src: url("../fonts/impact.ttf");
 }
 
 @font-face {
-  font-family: 'kshFont';
-  src:
-    url('../fonts/Foolishking-Regular.ttf');
+  font-family: "kshFont";
+  src: url("../fonts/Foolishking-Regular.ttf");
+}
+
+@font-face {
+  font-family: "LibreFranklinBlack";
+  src: url("../fonts/LibreFranklin-Black.ttf");
+}
+
+@font-face {
+  font-family: "cagerollCage";
+  src: url("../fonts/Cageroll-Cage.otf");
+}
+
+@font-face {
+  font-family: "cagerollRoll";
+  src: url("../fonts/Cageroll-Roll.otf");
+}
+
+@font-face {
+  font-family: "cagerollStandard";
+  src: url("../fonts/Cageroll-Standard.otf");
 }
 
 html {
-  font-family: kshFont;
-  font-size: x-large;
+  font-family: LibreFranklinBlack;
   background: black;
   background-size: cover;
 }
 
 p {
-  font-size: 20px;
   color: white;
+  text-align: center;
 }
 
 h1,
@@ -42,13 +58,6 @@ h3 {
   overflow: auto;
 }
 
-.portfolioCenter {
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: auto;
-}
-
 .centerImage {
   z-index: -1;
   display: block;
@@ -56,68 +65,84 @@ h3 {
   margin-right: auto;
   max-width: 100%;
   max-height: 100%;
+  animation: fadeIn 0.7s;
 }
 
-/* The Modal (background) */
-.modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Puts white box modal on top of everything. Higher z-index = Higher overlap on top of other elements*/
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100%;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.7);
-  /* Black w/ opacity, gives that sorta vignette look */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-/* Modal Content/Box */
-.modal-content {
-  margin: auto;
-  /* 15% from the top and centered */
-  padding: 20px;
-  width: 70%;
-  /* Could be more or less, depending on screen size */
-  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.7);
-  animation-name: modalopen;
-  animation-duration: 1s;
+.container {
+  display: flex;
   justify-content: center;
+}
+
+/* Portfolio Stuff*/
+
+@media (orientation: landscape) {
+  .modal img {
+    height: 80%;
+    max-height: 100vh;
+  }
+}
+
+@media (orientation: portrait) {
+  .modal img {
+    width: 100%;
+    max-width: 100vh;
+  }
+  .portfolio img {
+    cursor: pointer;
+    margin: 5px;
+    max-width: 100px;
+  }
+}
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
   align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.4s;
   text-align: center;
 }
 
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 56px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
+.modal span {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+  color: #fff;
   cursor: pointer;
 }
 
-@keyframes modalopen {
-  from {
-    opacity: 0
-  }
+.modalButtons {
+  display: block;
+  text-align: center;
+}
 
-  to {
-    opacity: 1
-  }
+.portfolio {
+  text-align: center;
+}
+
+.portfolio img {
+  cursor: pointer;
+  margin: 3px;
+}
+
+.portfolio img:hover {
+  opacity: 0.5;
 }
 
 /*Beginning of Toolbar*/
@@ -141,7 +166,6 @@ li a {
   border-style: groove;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0.5);
-
 }
 
 li a:hover {
@@ -149,3 +173,32 @@ li a:hover {
 }
 
 /*End of Toolbar*/
+
+/* Banner styles */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 42.19%; /* Adjust this value to maintain the desired aspect ratio */
+  background-image: url(../img/portfolio/2022/22.05.21_cnColors.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.banner::before {
+  content: "";
+  display: block;
+  padding-top: 0; /* Set to 0 if you want to remove any additional space at the top of the banner */
+}
+
+footer {
+  background-color: rgb(15, 15, 15);
+  /* background-image: url(../img/assets/bg05.png); */
+  background-size: cover;
+  /* opacity: 30%; */
+}
+
+footer img {
+  height: 50px;
+  width: 50px;
+}
