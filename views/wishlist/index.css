@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "adultSwim";
+    src: url("./adultSwim.ttf");
+  }
+
+html {
+    background-size: auto;
+    background-image: url("./img/bg.png");
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: adultSwim;
+}
+
+table, th, td {
+    border: 2px solid white;
+    border-collapse: collapse;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.75);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: rgb(0, 225, 255);
+}
